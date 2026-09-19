@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta name="google-site-verification" content="HQBYnfBywcZEb7viuUg_RQwsS4mutH6bz99Bi06OnLY" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رائف السامعي - محاسب مالي ومحلل بيانات</title>
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+        :root {
+            --dark-blue: #15335e;
+            --royal-blue: #1c4b82;
+            --soft-gold: #D4AF37;
+            --green-accent: #27ae60;
+            --light-bg: #f4f7f6;
+            --text-dark: #333;
+            --text-light: #fff;
+            --text-gray: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- New Header Design --- */
+        .header-new {
+            background-color: #fff;
+            padding: 0.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-left .btn-header {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .header-left .btn-header:hover {
+            background-color: var(--royal-blue);
+        }
+
+        .nav-new ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-new a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-new a:hover,
+        .nav-new a.active {
+            color: var(--green-accent);
+            border-bottom: 3px solid var(--green-accent);
+        }
+
+        .logo-new {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-new .logo-text {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .logo-new .logo-text strong {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-new .logo-text span {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .logo-new .logo-icon {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            font-family: serif;
+            position: relative;
+        }
+
+        .logo-new .logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            width: 15px;
+            height: 3px;
+            background-color: var(--soft-gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* --- New Hero Section --- */
+        .hero-new {
+            background-color: var(--dark-blue);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 5% 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content-new {
+            flex: 1;
+            padding-right: 2%;
+            z-index: 2;
+        }
+
+        .hero-content-new h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--green-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content-new p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-green {
+            background-color: var(--green-accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-green:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons-hero {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons-hero a {
+            color: white;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons-hero a:hover {
+            background-color: var(--green-accent);
+            border-color: var(--green-accent);
+        }
+
+        .hero-image-container {
+            flex: 1;
+            height: calc(100vh - 100px);
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .hero-image-container img {
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .hero-floating-text {
+            position: absolute;
+            right: 10%;
+            top: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: right;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-floating-text::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background-color: var(--green-accent);
+            margin-right: 0;
+            margin-top: 5px;
+        }
+
+        /* --- Stats Bar --- */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            padding: 2.5rem 5%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            flex: 1;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background-color: #eee;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .stat-item p {
+            color: var(--text-gray);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* --- About & Skills Section --- */
+        .about-skills-section {
+            display: flex;
+            padding: 80px 5%;
+            background-color: #fff;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-image {
+            flex: 1.2;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .about-image-text {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.4;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            max-width: 200px;
+        }
+
+        .about-image-text::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--green-accent);
+            margin-top: 10px;
+        }
+
+        .about-content {
+            flex: 1.5;
+            padding: 0 1rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            font-weight: 800;
+        }
+
+        .section-header i {
+            font-size: 2rem;
+            color: var(--dark-blue);
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .btn-outline-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            border: 2px solid var(--green-accent);
+            color: var(--green-accent);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-green:hover {
+            background-color: var(--green-accent);
+            color: white;
+        }
+
+        .skills-list {
+            flex: 1.3;
+            background-color: #fff;
+        }
+
+        .skills-list h2 {
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+
+        .skills-list h2 i {
+            color: var(--dark-blue);
+        }
+
+        .skills-list ul {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skills-list li i {
+            color: var(--green-accent);
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Legacy Sections General (For remaining sections) */
+        .section-legacy {
+            padding: 80px 5%;
+        }
+
+        .section-title-legacy {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .section-title-legacy::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--green-accent);
+            border-radius: 2px;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+            border-bottom: 4px solid var(--royal-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--green-accent);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--green-accent);
+        }
+
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: #fff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-right: 5px solid var(--green-accent);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateX(-5px);
+        }
+
+        .portfolio-item h3 {
+            color: var(--royal-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* CV Section from User */
+        #resume {
+            background-color: var(--light-bg);
+        }
+
+        .resume-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .resume-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-right: 4px solid var(--green-accent);
+        }
+
+        .resume-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .resume-list {
+            margin-right: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .resume-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+        }
+
+        #contact .section-title-legacy {
+            color: var(--text-light);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--green-accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d2140;
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-skills-section {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .hero-content-new h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-new ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 1rem 0;
+                text-align: center;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #eee;
+            }
+
+            .nav-new ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-new {
+                flex-direction: column;
+                padding-top: 120px;
+            }
+
+            .hero-image-container {
+                height: 400px;
+                width: 100%;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+
+            .hero-floating-text {
+                top: 10%;
+                right: 5%;
+                font-size: 1.5rem;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .header-left {
+                display: none;
+                /* Hide download button on small screens for space */
+            }
+
+            .logo-new .logo-text strong {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header-new">
+        <div class="header-left">
+            <a href="رائف السامعي - سيرة ذاتية احترافية (ATS) 009.pdf" download class="btn-header">
+                <i class="fa fa-download"></i> تحميل السيرة الذاتية
+            </a>
+        </div>
+
+        <nav class="nav-new">
+            <ul id="nav-menu">
+                <li><a href="#hero" class="active" onclick="toggleMenu()">الرئيسية</a></li>
+                <li><a href="#about" onclick="toggleMenu()">نبذة عني</a></li>
+                <li><a href="#resume" onclick="toggleMenu()">الخبرات العملية</a></li>
+                <li><a href="#resume" onclick="toggleMenu()">المؤهلات</a></li>
+                <li><a href="#about" onclick="toggleMenu()">المهارات</a></li>
+                <li><a href="#services" onclick="toggleMenu()">الشهادات</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">التواصل</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right logo-new">
+            <div class="logo-text">
+                <strong>رائف السامعي</strong>
+                <span>محاسب مالي أول وخبير موارد بشرية</span>
+            </div>
+            <div class="logo-icon">R</div>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-new">
+        <div class="hero-content-new">
+            <h1>رائف السامعي</h1>
+            <h2 class="hero-subtitle">محاسب مالي أول وخبير موارد بشرية</h2>
+            <p>أجمع بين الخبرة المالية والمستندة لخبرة والنظرة على تحقيق امتثال مؤسسي متكامل وتنظيم الربحية.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-green"><i class="fa fa-envelope-o"></i> تواصل معي</a>
+                <a href="#resume" class="btn btn-outline"><i class="fa fa-file-text-o"></i> عرض السيرة الذاتية</a>
+            </div>
+            <div class="social-icons-hero">
+                <a href="https://www.linkedin.com/in/raef-alsamei" target="_blank" title="LinkedIn"><i
+                        class="fa fa-linkedin"></i></a>
+                <a href="#" title="X / Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" title="Google"><i class="fa fa-google"></i></a>
+                <a href="mailto:raefcpa2026@gmail.com" title="Email"><i class="fa fa-envelope-o"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="file:///C:/Users/USER/.gemini/antigravity-ide/brain/22a8f9dc-23f8-4a99-ac97-638e5079af56/portrait_1789774810078.jpg"
+                alt="رائف السامعي">
+            <div class="hero-floating-text">
+                <span>طموح</span>
+                <span>خبرة</span>
+                <span>إنجاز</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <i class="fa fa-handshake-o"></i>
+            <h3>5+</h3>
+            <p>جهات عمل متنوعة</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa fa-bar-chart"></i>
+            <h3>3+</h3>
+            <p>سنوات خبرة عملية</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa fa-shield"></i>
+            <h3>100%</h3>
+            <p>التزام وامتثال</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa fa-users"></i>
+            <h3>إدارة</h3>
+            <p>شؤون الموظفين والرواتب</p>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="about-skills-section">
+        <div class="about-image">
+            <img src="file:///C:/Users/USER/.gemini/antigravity-ide/brain/22a8f9dc-23f8-4a99-ac97-638e5079af56/laptop_desk_1789774823560.jpg"
+                alt="مكتب الإنجاز">
+            <div class="about-image-text">الأرقام تحكي قصص النجاح</div>
+        </div>
+
+        <div class="about-content">
+            <div class="section-header">
+                <i class="fa fa-user-o"></i>
+                <h2>نبذة عني</h2>
+            </div>
+            <p>محاسب مالي أول وخبير موارد بشرية أتمتع بمهارات تحليلية عالية وخبرة على النتائج. ولدي خبرة جيدة جداً في
+                مجالات متنوعة تشمل المحاسبة المالية، هندسة التكاليف، والامتثال الضريبي (ZATCA)، وإدارة شؤون الموظفين.
+                أتمتع بسجل حافل في إعادة هيكلة الأنظمة المحاسبية ومراجعة السجلات التاريخية لرفع كفاءة التكاليف.</p>
+            <p>بأريحية إدارية وعمليات الموارد البشرية، وتحديث إدارة المخزون في الفروع المتعددة وإجراء عمليات مطابقة
+                دقيقة للحسابات المصرفية والنقدية.</p>
+            <a href="#resume" class="btn-outline-green">المزيد عني <i class="fa fa-arrow-left"></i></a>
+        </div>
+
+        <div class="skills-list">
+            <h2>المهارات الرئيسية <i class="fa fa-cog"></i></h2>
+            <ul>
+                <li><i class="fa fa-line-chart"></i> المحاسبة المالية والتحليل المالي</li>
+                <li><i class="fa fa-money"></i> هندسة التكاليف وإدارة التكاليف</li>
+                <li><i class="fa fa-shield"></i> الامتثال الضريبي (ZATCA)</li>
+                <li><i class="fa fa-users"></i> إدارة شؤون الموظفين والرواتب</li>
+                <li><i class="fa fa-laptop"></i> أنظمة ERP والمحاسبية</li>
+                <li><i class="fa fa-cubes"></i> إدارة المخزون والمشتريات</li>
+                <li><i class="fa fa-file-text-o"></i> التقارير ولوحات البيانات</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-legacy">
+        <h2 class="section-title-legacy">خدماتي</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa fa-calculator"></i></div>
+                <h3>الاستشارات المحاسبية والضريبية</h3>
+                <p>تقديم استشارات متكاملة متوافقة مع متطلبات هيئة الزكاة والضريبة والجمارك (ZATCA)، بالإضافة إلى خبرة
+                    واسعة في استخدام وتهيئة نظام أونكس برو.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa fa-cogs"></i></div>
+                <h3>أتمتة العمليات</h3>
+                <p>تصميم وبناء مسارات عمل آلية باستخدام منصات مثل Make وربط الأنظمة المختلفة عبر واجهات برمجة التطبيقات
+                    (APIs) لتوفير الوقت وتقليل الأخطاء.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa fa-pie-chart"></i></div>
+                <h3>التحليل المالي</h3>
+                <p>تحويل البيانات المالية المعقدة إلى رؤى واضحة ومباشرة من خلال بناء لوحات تحكم تفاعلية (Dashboards)
+                    باستخدام Looker Studio و Google Sheets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-legacy">
+        <h2 class="section-title-legacy">معرض الأعمال</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>مكتب وازن</h3>
+                <p>تنفيذ وإدارة مهام محاسبية دورية لعملاء مكتب وازن بكفاءة عالية ودقة متناهية، مما ساهم في تحسين جودة
+                    التقارير المالية للعملاء.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>تهيئة أنظمة ERP</h3>
+                <p>تنفيذ وتهيئة أنظمة تخطيط موارد المؤسسات، مع التركيز على مطابقتها للدورة المستندية للشركات وتحقيق
+                    التكامل المالي والإداري.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>لوحات التحكم المالية</h3>
+                <p>بناء وتطوير لوحات تحكم مالية متقدمة وتفاعلية تتيح للإدارة العليا متابعة مؤشرات الأداء الرئيسية (KPIs)
+                    بشكل لحظي واتخاذ قرارات مبنية على البيانات.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section from User -->
+    <section id="resume" class="section-legacy">
+        <h2 class="section-title-legacy">السيرة الذاتية</h2>
+        <div class="resume-container">
+            <!-- بطاقة الخبرات المهنية -->
+            <div class="resume-card">
+                <div class="resume-icon">💼</div>
+                <h3>الخبرات المهنية</h3>
+                <p>خبرة عملية متقدمة كمحاسب مصروفات ومشاريع، وإدارة مهام محاسبية دورية للعديد من الشركات والعملاء وفق
+                    معايير ZATCA والرقابة المالية.</p>
+                <ul class="resume-list">
+                    <li>شركة Smart Life للاتصالات</li>
+                    <li>شركة حجر الأساس للمقاولات</li>
+                    <li>مكتب وازن للاستشارات المحاسبية</li>
+                </ul>
+            </div>
+            <!-- بطاقة المؤهلات العلمية -->
+            <div class="resume-card">
+                <div class="resume-icon">🎓</div>
+                <h3>المؤهلات والدورات</h3>
+                <p>خريج جامعة صنعاء بمرتبة تخصصية، مع دبلومات مهنية معتمدة في الموارد البشرية وتطبيقات التحليل المالي
+                    المتقدم.</p>
+                <ul class="resume-list">
+                    <li>بكالوريوس محاسبة (جامعة صنعاء)</li>
+                    <li>دبلوم مهني في الموارد البشرية</li>
+                    <li>دورات تخصصية في Excel و Looker Studio</li>
+                </ul>
+            </div>
+            <!-- بطاقة الأنظمة والمهارات -->
+            <div class="resume-card">
+                <div class="resume-icon">🛠️</div>
+                <h3>الأنظمة والمهارات التقنية</h3>
+                <p>إجادة تامة لأحدث الأنظمة المحاسبية وأدوات أتمتة التقارير وتحليل البيانات لتوفير رؤى دقيقة تدعم اتخاذ
+                    القرار.</p>
+                <ul class="resume-list">
+                    <li>أنظمة ERP (أونكس برو و Smart ERP)</li>
+                    <li>التحليل المالي وأتمتة التقارير (Make & APIs)</li>
+                    <li>جداول البيانات المتقدمة (Excel & Looker Studio)</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="رائف السامعي - سيرة ذاتية احترافية (ATS) 009.pdf" download class="btn btn-green">
+                تحميل السيرة الذاتية الكاملة (PDF) 📄
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-legacy">
+        <h2 class="section-title-legacy">تواصل معي</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>معلومات التواصل</h3>
+                <p><span>📍</span> الموقع: صنعاء، اليمن</p>
+                <p><span>📧</span> البريد الإلكتروني: raefcpa2026@gmail.com</p>
+                <p>الهاتف: <span style="display: inline-block; direction: ltr; unicode-bidi: isolate;">+967 772 254
+                        071</span> 📱</p>
+                <p><span>🔗</span> <a href="https://www.linkedin.com/in/raef-alsamei" target="_blank"
+                        style="color: var(--text-light); text-decoration: none;">تابعني على LinkedIn</a></p>
+
+                <a href="mailto:raefcpa2026@gmail.com" target="_blank" class="btn btn-green"
+                    style="margin-top: 1.5rem; display: inline-flex;">
+                    <i class="fa fa-envelope"></i> أرسل رسالة
+                </a>
+
+                <button onclick="shareWebsite()" class="btn btn-outline"
+                    style="margin-top: 1.5rem; margin-right: 10px; display: inline-flex;">
+                    <i class="fa fa-share-alt"></i> مشاركة الموقع
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 رائف السامعي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            if (window.innerWidth <= 768) {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.toggle('active');
+            }
+        }
+
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'رائف السامعي - محاسب مالي ومحلل بيانات',
+                    text: 'تعرف على خدمات رائف السامعي في المحاسبة المالية وتحليل البيانات.',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('تم نسخ رابط الموقع إلى الحافظة!');
+                });
+            }
+        }
+
+        // Active link switching
+        const links = document.querySelectorAll('#nav-menu a');
+        links.forEach(link => {
+            link.addEventListener('click', function () {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/967772254071" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+        </svg>
+    </a>
+</body>
+
+</html>
